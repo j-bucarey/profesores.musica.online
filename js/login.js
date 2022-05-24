@@ -1,37 +1,40 @@
-$(window).ready(function() {
-
-    
-    $('#formulario_login').on('submit', function(e) {
-
-        e.preventDefault();
-
-        let usuario = $('#txt_usuario').val();
-        let pass = $('#txt_contrasena').val();
-
-        $.post('controller/login.php', {usuario, pass}, function(data) {
-
-            data = JSON.parse(data);
-
-            if(data == 'true') {
-
-                location.href = 'contenido.html';
-                
-            } else {
-
-                swal.fire({
-                    title: '¡Error!',
-                    icon: 'error',
-                    text: data
-                });
-
-            }
-            
-
-        });
-
-
-    });
-    
-    
-    
+$('#formLogin').submit(function(e){                         
+    e.preventDefault(); 
+    var usuario = $.trim($("#usuario").val());
+    var password = $.trim($("#password").val());
+    if(usuario.length == "" || password.length == ""){
+        Swal.fire({
+          type: 'warning',
+          title: 'Ingrese Usuario y/o Password',                          
+        }); 
+        return false;
+    }else{    
+        $.ajax({
+          url:"bd/login.php",
+          type:"POST",    
+          datatype:"json",    
+          data:  {usuario:usuario, password:password},    
+          success: function(data) {
+              //console.log(data);
+              if(data == "null"){
+                  Swal.fire({
+                      type: 'error',
+                      title: 'Usuario y/o Password incorrectas',                          
+                    });                    
+              }else{                  
+                  Swal.fire({
+                      type: 'success',                          
+                      title: '¡Conexión exitosa!',                                                
+                      confirmButtonColor: '#3085d6',                          
+                      confirmButtonText: 'Ingresar'
+                    }).then((result) => {
+                      if (result.value) {
+                          /* window.location.href = "vistas/pag_inicio.php";       */  
+                          window.location.href = "contenido.html";
+                      }
+                    })                                                               
+              }
+           }
+        });			            
+    }
 });
