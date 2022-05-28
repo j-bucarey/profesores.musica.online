@@ -17,8 +17,12 @@
                     </div>
                 
                     <div class="form-group">
-                        <input type="file" name="imagen" class="form-control"
-                        placeholder="Ingrese su foto">
+                        <input type="text" name="ocupacion" class="form-control"
+                        placeholder="Ocupacion">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="descripcion" class="form-control"
+                        placeholder="Descripcion">
                     </div>
                     <!-- <div class="form-group">
                         <input type="text" name="descripcion" class="form-control"

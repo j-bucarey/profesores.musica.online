@@ -1,3 +1,5 @@
+
+<?php include("conexion.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,34 +9,44 @@
     <title>Mostrar Tutores</title>
 </head>
 <body>
-    <div class="mostrar">
-    <table>
-        <thead>
+
+    <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Ocupacion</th>
+                <th>Descripcion</th>
+                <th>Accion</th>
+            </tr>
+            </thead>
+        <tbody>
+
+        <?php
+        $query = "SELECT * FROM tb_tutor";
+        $result_tb_tutor = mysqli_query($conn, $query);    
+
+        while($row = mysqli_fetch_assoc($result_tb_tutor)) { ?>
         <tr>
-            <th>nombre<th>
-            <th>imagen<th>
-            <th>operaciones<th>
-        </tr> 
-    </thead>
+        <td><?php echo $row['nombre']; ?></td>
+        <td><?php echo $row['ocupacion']; ?></td>
+        <td><?php echo $row['descripcion']; ?></td>
+        <td>
+            <a href="edit.php?id=<?php echo $row['id']?>" class="btn btn-secondary">
+            <i class="fas fa-marker"></i>
+            </a>
+            <a href="delete.php?id=<?php echo $row['id']?>" class="btn btn-danger">
+            <i class="far fa-trash-alt"></i>
+            </a>
+        </td>
+        </tr>
+        <?php } ?>
+        </tbody>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-    
-</body>
+            </div>
+            
+        </body>
+    <table>
 </html>
 
 
