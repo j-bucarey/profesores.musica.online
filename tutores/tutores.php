@@ -1,45 +1,144 @@
-<?php include("conexion.php") ?>
+<?php include 'includes/header.php' ?>
 
-<?php include("includes/header.php") ?>
+<?php
+    include_once "conexion.php";
+    $sentencia = $bd -> query("select * from tb_tutor");
+    $persona = $sentencia->fetchAll(PDO::FETCH_OBJ);
+    //print_r($persona);
+?>
 
-<div class="container p-4">
-    <div class="row">
-        <div class="cold-md-4">
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <!-- inicio alerta -->
+            <?php 
+                if(isset($_GET['mensaje']) and $_GET['mensaje'] == 'falta'){
+            ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error!</strong> Rellena todos los campos.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php 
+                }
+            ?>
+
+
+            <?php 
+                if(isset($_GET['mensaje']) and $_GET['mensaje'] == 'registrado'){
+            ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Registrado!</strong> Se agregaron los datos.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php 
+                }
+            ?>   
+            
+            
+
+            <?php 
+                if(isset($_GET['mensaje']) and $_GET['mensaje'] == 'error'){
+            ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error!</strong> Vuelve a intentar.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php 
+                }
+            ?>   
 
 
 
-            <div class="card card-body">
-                <form action="save_tutor.php" method="POST" enctype="multipart/form-data">
+            <?php 
+                if(isset($_GET['mensaje']) and $_GET['mensaje'] == 'editado'){
+            ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Cambiado!</strong> Los datos fueron actualizados.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php 
+                }
+            ?> 
 
-                    <div class="form-group">
-                        <input type="text" name="nombre" class="form-control"
-                        placeholder="Nombre/Apellido">
+
+            <?php 
+                if(isset($_GET['mensaje']) and $_GET['mensaje'] == 'eliminado'){
+            ?>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Eliminado!</strong> Los datos fueron borrados.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php 
+                }
+            ?> 
+
+            <!-- fin alerta -->
+            <div class="card">
+                <div class="card-header">
+                    Lista de personas
+                </div>
+                <div class="p-4">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Ocupacion</th>
+                                <th scope="col">Descripcion</th>
+                                <th scope="col" colspan="2">Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <?php 
+                                foreach($persona as $dato){ 
+                            ?>
+
+                            <tr>
+                                <td scope="row"><?php echo $dato->codigo; ?></td>
+                                <td><?php echo $dato->nombre; ?></td>
+                                <td><?php echo $dato->ocupacion; ?></td>
+                                <td><?php echo $dato->descripcion; ?></td>
+                                <td><a class="text-success" href="edit.php?codigo=<?php echo $dato->codigo; ?>"><i class="bi bi-pencil-square"></i></a></td>
+                                <td><a onclick="return confirm('Estas seguro que desea eliminar?');" class="text-danger" href="delete.php?codigo=<?php echo $dato->codigo; ?>"><i class="bi bi-trash"></i></a></td>
+                            </tr>
+
+                            <?php 
+                                }
+                            ?>
+
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Ingresar datos:
+                </div>
+                <form class="p-4" method="POST" action="save_tutor.php">
+                    <div class="mb-3">
+                        <label class="form-label">Nombre: </label>
+                        <input type="text" class="form-control" name="txtNombre" autofocus required>
                     </div>
-                
-                    <div class="form-group">
-                        <input type="text" name="ocupacion" class="form-control"
-                        placeholder="Ocupacion">
+                    <div class="mb-3">
+                        <label class="form-label">Ocupacion: </label>
+                        <input type="text" class="form-control" name="txtOcupacion" autofocus required>
                     </div>
-                    <div class="form-group">
-                        <input type="text" name="descripcion" class="form-control"
-                        placeholder="Descripcion">
+                    <div class="mb-3">
+                        <label class="form-label">Descripcion: </label>
+                        <input type="text" class="form-control" name="txtDescripcion" autofocus required>
                     </div>
-                    <!-- <div class="form-group">
-                        <input type="text" name="descripcion" class="form-control"
-                        placeholder="Descripcion">
-                    </div> -->
-                    <input type="submit" class="btn btn-success btn-block" name="guardar_tutor"
-                    value="Guardar">
+                    <div class="d-grid">
+                        <input type="hidden" name="oculto" value="1">
+                        <input type="submit" class="btn btn-primary" value="Registrar">
+                    </div>
                 </form>
             </div>
-
-        </div>
-
-        <div class="col-md-8">
-
         </div>
     </div>
 </div>
 
-
-<?php include("includes/footer.php") ?>
+<?php include 'includes/footer.php' ?>

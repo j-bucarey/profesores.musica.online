@@ -1,38 +1,23 @@
-<?php 
-
-include("conexion.php");
-
-
-if (isset($_POST['save_tutor'])) {
-    $nombre = $_POST['nombre'];
-    $ocupacion = $_POST['ocupacion'];
-    $descripcion = $_POST['descripcion'];
-    $query = "INSERT INTO tb_tutor(nombre,ocupacion, descripcion) VALUES ('$title', '$ocupacion', '$descripcion')";
-    $result = mysqli_query($conn, $query);
-    if(!$result) {
-      die("No se inserto.");
+<?php
+    //print_r($_POST);
+    if(empty($_POST["oculto"]) || empty($_POST["txtNombre"]) || empty($_POST["txtOcupacion"]) || empty($_POST["txtDescripcion"])){
+        header('Location: tutores.php?mensaje=falta');
+        exit();
     }
-  
-    $_SESSION['message'] = 'Tutor guardado exitosamente';
-    $_SESSION['message_type'] = 'success';
-    header('Location: tutores.php');
 
-  }
-// $nombre = $_POST['nombre'];
-// $ocupacion = $_POST['ocupacion'];
-// $descripcion = $_POST['descripcion'];
+    include_once 'conexion.php';
+    $nombre = $_POST["txtNombre"];
+    $ocupacion = $_POST["txtOcupacion"];
+    $descripcion = $_POST["txtDescripcion"];
+    
+    $sentencia = $bd->prepare("INSERT INTO tb_tutor(nombre,ocupacion,descripcion) VALUES (?,?,?);");
+    $resultado = $sentencia->execute([$nombre,$ocupacion,$descripcion]);
 
-
-
-
-// $query = "INSERT INTO tba_tutor(nombre,ocupacion,descripcion) VALUES ('$nombre','$ocupacion','$descripcion')";
-// $resultado = $conexion->query($query);
-
-// if($resultado){
-// echo "si se inserto";
-// }
-// else{
-// echo "no se inserto";
-// }
-
+    if ($resultado === TRUE) {
+        header('Location: tutores.php?mensaje=registrado');
+    } else {
+        header('Location: tutores.php?mensaje=error');
+        exit();
+    }
+    
 ?>

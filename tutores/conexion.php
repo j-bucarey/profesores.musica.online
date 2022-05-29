@@ -1,21 +1,17 @@
+<?php 
+$contrasena = "";
+$usuario = "root";
+$nombre_bd = "login_desarrollo";
 
-<?php
-
-session_start();
-// $conexion = new mysqli("localhost","root","","login_desarrollo");
-
-$conn = mysqli_connect(
-      'localhost' ,
-      'root' ,
-      '',
-      'login_desarrollo'
-      
-);
-
-// if($conexion){
-//   echo "conexion exitosa";
-// }else{
-//   echo "conexion no hecha";
-// }
-
+try {
+	$bd = new PDO (
+		'mysql:host=localhost;
+		dbname='.$nombre_bd,
+		$usuario,
+		$contrasena,
+		array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8")
+	);
+} catch (Exception $e) {
+	echo "Problema con la conexion: ".$e->getMessage();
+}
 ?>
