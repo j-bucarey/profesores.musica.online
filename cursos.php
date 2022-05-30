@@ -1,55 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contenido</title>
+<?php include 'includes/header.php'?>
 
-    <link rel="stylesheet" href="css/contenido.css">
 
-    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
-
-    <!-- Boostrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
-<body id="body">
-    
-    
     <header>
         
-
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                 <a class="navbar-brand" href="#">MtGroup</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-             <span class="navbar-toggler-icon"></span>
-             </button>
-                 <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-            <li class="nav-item">
-               <a class="nav-link active" aria-current="page" href="../../desarrollo/contenido.html">Inicio</a>
-             </li>
-             <li class="nav-item">
-               <a class="nav-link active" aria-current="page" href="../../desarrollo/tutores/tutores.php">Tutores</a>
-            </li>
-             <li class="nav-item">
-               <a class="nav-link active" aria-current="page" href="../../desarrollo/contenido/contenido.php">Contenido</a>
-             </li>
-            <li class="nav-item">
-               <a class="nav-link active" aria-current="page" href="../../desarrollo/index.php">Salir</a>
-             </li>
-     
-                    </ul>
-            </div>
-            </div>
-        </nav>
     </header>
-
-    
-
-    <main>
-        <div class="contenido__cursos">
+    <div class="contenido__cursos">
         <h1>Cursos categorias</h1><br>
 
         <p>¡Nueva oportunidad para estudiar música desde tu casa!</p> <br>
@@ -311,9 +266,6 @@
             </div>
             <br> 
         </section>
-
-    </main>
-
-    <script src="js/contenido.js"></script>
+    
 </body>
 </html>

@@ -4,7 +4,7 @@
     include_once "conexion.php";
     $sentencia = $bd -> query("select * from tb_tutor");
     $persona = $sentencia->fetchAll(PDO::FETCH_OBJ);
-    //print_r($persona);
+   
 ?>
 
 <div class="container mt-5">
@@ -75,7 +75,7 @@
             <!-- fin alerta -->
             <div class="card">
                 <div class="card-header">
-                    Lista de personas
+                    Lista de Tutores
                 </div>
                 <div class="p-4">
                     <table class="table align-middle">
@@ -83,8 +83,8 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Nombre</th>
-                                <th scope="col">Ocupacion</th>
                                 <th scope="col">Descripcion</th>
+                                <th scope="col">Contacto</th>
                                 <th scope="col" colspan="2">Opciones</th>
                             </tr>
                         </thead>
@@ -124,11 +124,11 @@
                         <input type="text" class="form-control" name="txtNombre" autofocus required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Ocupacion: </label>
+                        <label class="form-label">Descripcion: </label>
                         <input type="text" class="form-control" name="txtOcupacion" autofocus required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Descripcion: </label>
+                        <label class="form-label">Contacto: </label>
                         <input type="text" class="form-control" name="txtDescripcion" autofocus required>
                     </div>
                     <div class="d-grid">

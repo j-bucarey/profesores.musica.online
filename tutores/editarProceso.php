@@ -10,6 +10,7 @@
     $ocupacion = $_POST['txtOcupacion'];
     $descripcion = $_POST['txtDescripcion'];
 
+
     $sentencia = $bd->prepare("UPDATE tb_tutor SET nombre = ?, ocupacion = ?, descripcion = ? where codigo = ?;");
     $resultado = $sentencia->execute([$nombre, $ocupacion, $descripcion, $codigo]);
 

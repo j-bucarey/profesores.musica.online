@@ -1,47 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MTgroup</title>
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-  <!-- CUSTOM CSS -->
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-
-<body>
-
-  <div class="menu-btn">
-    <i class="fas fa-bars fa-2x"></i>
-  </div>
-
-  <div class="container">
-    <!-- Navigation -->
-    <nav class="nav-main">
-      <!-- Brand -->
-      <img src="img/brand.png" alt="" class="nav-brand">
-      <!-- Left Nav -->
-      <ul class="nav-menu">
-      
-        <li>
-            <a href="login.php">Iniciar Sesion</a>
-        </li>
-      </ul>
-
-      <!-- Right Nav -->
-      <ul class="nav-menu-right">
-        <li>
-          <a href="#">
-            <i class="fas fa-search"></i>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <hr>
+<?php include 'includes/header.php'?>
 
     <!-- SHOWCASE -->
     <header class="showcase">
@@ -84,9 +41,14 @@
     <!-- Card Banner 1-->
     <section class="cards-banner-one">
       <div class="content">
-        <h2>Cursos </h2>
+        <h2>Equipo </h2>
         <!-- lorem 20 -->
-        <p>Acceso a nuestro contenido </p>
+        <p>Esto no pudo a verse realizado sin la participacion de dos estudiantes y una excelente profesional.
+        <br>
+        <br> 1) Jaime Bucarey:Desarrollador Web de 24 años , estudiante de la Universiad Autonoma de Chile.
+        <br> 2) Guillermo Gonzalez:Diseñador Grafico de 26 años, estudiante de la Univerdad de Talca.
+        <br> 3)Belen Montecinos : Profesora de musica de 30 años , egresada de la Universidad de Talca.
+        </p>
         </div>
     </section>
 
@@ -96,34 +58,36 @@
       <div>
         <img src="assets/Landing page/Guitarra_1.png" alt="" />
         <h3>Cursos de guitarra</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolore fugit esse corporis nesciunt minima
-          doloremque modi mollitia rerum, similique optio eligendi itaque amet qui ullam vel incidunt asperiores fuga?
+        <p>Es un curso de guitarra diseñado para gente que no se había planteado tocar la guitarra, pero quiere empezar. 
+          Así que no te preocupes, si has conseguido llegar hasta aquí es que quieres tocar la guitarra y este curso es 
+          para ti.¡Toca desde el primer momento mientras te diviertes!.
         </p>
-        <a href="#">Leer mas<i class="fas fa-angle-double-right"></i></a>
+        <a href="cursos.html">Leer mas<i class="fas fa-angle-double-right"></i></a>
       </div>
       <div>
         <img src="assets/Landing page/Piano_1.png" alt="" />
         <h3>Cursos de piano</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolore fugit esse corporis nesciunt minima
-          doloremque modi mollitia rerum, similique optio eligendi itaque amet qui ullam vel incidunt asperiores fuga?
+        <p>Es un curso para empezar a tocar el piano desde cero, de forma progresiva vas aprender contenidos teóricos y prácticos.
+          Lectura músical, cifrado, acordes, vas a aprender como entender una partitura moderna y hacer tu propio arreglo de la canción.
+
         </p>
-        <a href="#">Leer mas<i class="fas fa-angle-double-right"></i></a>
+        <a href="cursos.html">Leer mas<i class="fas fa-angle-double-right"></i></a>
       </div>
       <div>
         <img src="assets/Landing page/Canto_1png.png" alt="" />
         <h3>Cursos de canto</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolore fugit esse corporis nesciunt minima
-          doloremque modi mollitia rerum, similique optio eligendi itaque amet qui ullam vel incidunt asperiores fuga?
+        <p>En este curso las clases de canto tienen por objetivo entregarte las herramientas necesarias para adquirir una sólida técnica vocal, ya sea en 
+          el ámbito popular como en el lírico. Para ello se trabaja fundamentalmente en la respiración, relajación, impostación e interpretación.
         </p>
-        <a href="#">Leer mas<i class="fas fa-angle-double-right"></i></a>
+        <a href="cursos.html">Leer mas<i class="fas fa-angle-double-right"></i></a>
       </div>
       <div>
         <img src="assets/Landing page/Bateria.png" alt="" />
         <h3>Cursos de bateria</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolore fugit esse corporis nesciunt minima
-          doloremque modi mollitia rerum, similique optio eligendi itaque amet qui ullam vel incidunt asperiores fuga?
+        <p>Este curso te enseña las diferentes partes de la batería y te recomienda la mejor técnica para que saques el mejor sonido del instrumento y cuides 
+          tu cuerpo. Aprende a tocar diferentes ritmos entendiendo la escritura y lectura en pentagrama.
         </p>
-        <a href="#">eer mas <i class="fas fa-angle-double-right"></i></a>
+        <a href="cursos.html">Leer mas <i class="fas fa-angle-double-right"></i></a>
       </div>
     </div>
 
