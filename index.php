@@ -46,7 +46,7 @@
         <p>Esto no pudo a verse realizado sin la participacion de dos estudiantes y una excelente profesional.
         <br>
         <br> 1) Jaime Bucarey:Desarrollador Web de 24 años , estudiante de la Universiad Autonoma de Chile.
-        <br> 2) Guillermo Gonzalez:Diseñador Grafico de 26 años, estudiante de la Univerdad de Talca.
+        <br> 2) Guillermo Gonzalez:Diseñador Grafico de 26 años, estudiante de la Universidad de Talca.
         <br> 3)Belen Montecinos : Profesora de musica de 30 años , egresada de la Universidad de Talca.
         </p>
         </div>

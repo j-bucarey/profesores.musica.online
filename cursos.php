@@ -157,7 +157,7 @@
                 <div class="row mt-3">
                     <h4>Instrumento de percusion</h4>
                     
-                    <h5>Clases de guitarra acustica</h5>
+                    <h5>Clases de bateria</h5>
                     <div class="col-lg-4 col-md-6" style="border: 20px  ">
                         <iframe width="425" height="200" src="https://www.youtube.com/embed/aaU8j4tKe0M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <h5>Afinacion de caja<h5>
