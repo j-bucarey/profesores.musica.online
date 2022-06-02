@@ -21,7 +21,7 @@
       <div>
         <img src="assets/2_landing_page.jpg" alt="" />
         <h3>Aprende con los mejores profesores de musica</h3>
-        <p>Aprende los metodos y tecnica mas utiles para aprender el instrumento musical que desees.</p>
+        <p>Aprende los métodos y técnica mas utiles para aprender el instrumento musical que desees.</p>
         <a href="#">Learn More <i class="fas fa-angle-double-right"></i></a>
       </div>
       <div>
